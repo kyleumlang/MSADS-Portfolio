@@ -1,0 +1,237 @@
+---
+title: "Kyle_Umlang_Final"
+author: "Kyle Umlang"
+date: "9/22/2019"
+output: html_document
+---
+
+---
+title: "Kyle_Umlang_Final"
+author: "Kyle Umlang"
+date: "9/22/2019"
+output: html_document
+---
+
+Importing Data
+> CFB <- read_excel("CombinedSeasons.xls")
+
+Quality Assessment
+> dim(CFB)
+
+> summary(CFB)
+
+About the Data
+> str(CFB)
+
+> head(CFB, 10)
+
+> tail(CFB)
+
+Data Analysis and Modeling Functions Used
+
+rbind function
+
+Big12
+> Texas<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Texas'")
+> Oklahoma<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Oklahoma'")
+> Baylor<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Baylor'")
+> IowaState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Iowa State'")
+> Kansas<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Kansas'")
+> KansasState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Kansas State'")
+> OklahomaState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Oklahoma State'")
+> TCU<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Texas Christian'")
+> TexasTech<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'Texas Tech'")
+> WestVirginia<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'West Virginia'")
+
+> Big12<-rbind(Texas, TexasTech, TCU, IowaState, Kansas, KansasState, Oklahoma, OklahomaState, Baylor, WestVirginia)
+
+> names(Big12) <- c("School", "Wins", "ConfWins", "SOS", "SRS", "WinPct","ConfPct", "APRanks", "Diff")
+
+
+BigTen
+> OhioState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Ohio State'")
+> Michigan<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Michigan'")
+> PennState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Penn State'")
+> MichiganState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Michigan State'")
+> Maryland<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Maryland'")
+> Indiana<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Indiana'")
+> Rutgers<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Rutgers'")
+> Northwestern<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Northwestern'")
+> Iowa<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'Iowa'")
+> Wisconsin<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'Wisconsin'")
+> Purdue<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Purdue'")
+> Minnesota<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Minnesota'")
+> Nebraska<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'Nebraska'")
+> Illinois<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'Illinois'")
+
+> BigTen<-rbind(OhioState, PennState, Michigan, MichiganState, Wisconsin, Indiana, Illinois, Nebraska, Iowa, Purdue , Northwestern, Maryland, Rutgers, Minnesota)
+
+> names(BigTen) <- c("School", "Wins", "ConfWins", "SOS", "SRS", "WinPct","ConfPct", "APRanks", "Diff")
+
+
+Pac12
+> WashingtonState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Washington State'")
+> Washington<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Washington'")
+> Stanford<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Stanford'")
+> OregonState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Oregon State'")
+> Oregon<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Oregon'")
+> California<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'California'")
+> Utah<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Utah'")
+> ArizonaState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Arizona State'")
+> Arizona<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'Arizona'")
+> USC<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'USC'")
+> UCLA<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'UCLA'")
+> Colorado<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Colorado'")
+
+> Pac12<-rbind(Washington, WashingtonState, Oregon, OregonState, Arizona, ArizonaState, Utah, Colorado, USC, UCLA,California,Stanford)
+
+> names(Pac12) <- c("School", "Wins", "ConfWins", "SOS", "SRS", "WinPct","ConfPct", "APRanks", "Diff")
+
+
+SEC
+> Georgia<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Georgia'")
+> Florida<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Florida'")
+> Kentucky<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Kentucky'")
+> Missouri<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Missouri'")
+> SouthCarolina<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'South Carolina'")
+> Vanderbilt<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Vanderbilt'")
+> Tennessee<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Tennessee'")
+> Alabama<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Alabama'")
+> LSU<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'LSU'")
+> TAMU<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'Texas A&M'")
+> MississippiState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Mississippi State'")
+> Auburn<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Auburn'")
+> OleMiss<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Ole Miss'")
+> Arkansas<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Arkansas'")
+
+> SEC<-rbind(Alabama, TAMU, Auburn, Arkansas, LSU, OleMiss, MississippiState, Vanderbilt, Tennessee, Florida, Georgia, SouthCarolina, Missouri, Kentucky)
+
+> names(SEC) <- c("School", "Wins", "ConfWins", "SOS", "SRS", "WinPct","ConfPct", "APRanks", "Diff")
+
+
+
+ACC
+> Clemson<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Clemson'")
+> FloridaState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Florida State'")
+> Syracuse<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Syracuse'")
+> NorthCarolinaState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'North Carolina State'")
+> BostonCollege<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Boston College'")
+> WakeForest<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Wake Forest'")
+> Louisville<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Louisville'")
+> Pittsburgh<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Pitt'")
+> GeorgiaTech<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'Georgia Tech'")
+> Virginia<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'Virginia'")
+> Miami<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Miami (FL)'")
+> VirginiaTech<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Virginia Tech'")
+> Duke<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Duke'")
+> NorthCarolina<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'North Carolina'")
+
+> ACC<-rbind(Clemson, NorthCarolina, NorthCarolinaState, WakeForest, FloridaState, Syracuse, Louisville, Duke, Virginia, VirginiaTech, BostonCollege, Pittsburgh, GeorgiaTech, Miami)
+
+> names(ACC) <- c("School", "Wins", "ConfWins", "SOS", "SRS", "WinPct","ConfPct", "APRanks", "Diff")
+
+
+
+IND
+> Massachusetts<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'Massachusetts'")
+> NewMexicoState<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School =  'New Mexico State'")
+> Liberty<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Liberty'")
+> Army<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Army'")
+> BYU<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Brigham Young'")
+> NotreDame<-sqldf("SELECT School, sum(`Ovr W`), sum(`Conf W`), avg(SOS), avg(SRS), avg(`Ovr PCT`),avg(`Conf PCT`), count(`AP Rank`), avg(Differential) FROM CFB WHERE School = 'Notre Dame'")
+
+> IND<-rbind(BYU, NotreDame, Massachusetts, Army, NewMexicoState, Liberty)
+> names(IND) <- c("School", "Wins", "ConfWins", "SOS", "SRS", "WinPct","ConfPct", "APRanks", "Diff")
+
+
+FBS
+> FBS<-rbind(ACC, Big12, BigTen, SEC, Pac12,IND)
+> ggplot(FBS, aes(x = SOS, y = Wins)) + geom_point() + geom_text(aes(label=School))
+
+lm function
+> model1<-lm(formula=Wins ~ ConfWins, data=FBS)
+> summary(model1)
+
+> model2<-lm(formula=Wins ~ SOS, data=FBS)
+> summary(model2)
+
+> model3<-lm(formula=Wins ~ SRS, data=FBS)
+> summary(model3)
+
+> model4<-lm(formula=Wins ~ WinPct, data=FBS)
+> summary(model4)
+
+> model5<-lm(formula=Wins ~ ConfPct, data=FBS)
+> summary(model5)
+
+> model6<-lm(formula=Wins ~ APRanks, data=FBS)
+> summary(model6)
+
+> model7<-lm(formula=Wins ~ Diff, data=FBS)
+> summary(model7)
+
+> model8<-lm(formula=Wins ~ ConfWins+SOS+SRS+WinPct+ConfPct+APRanks+Diff, data=FBS)
+> summary(model8)
+
+Scatter plot ggplot
+> ggplot(Big12, aes(x = SOS, y = Wins)) + geom_point() + geom_text(aes(label=School))
+> ggplot(BigTen, aes(x = SOS, y = Wins)) + geom_point() + geom_text(aes(label=School))
+
+> ggplot(Pac12, aes(x = SOS, y = Wins)) + geom_point() + geom_text(aes(label=School))
+
+> ggplot(SEC, aes(x = SOS, y = Wins)) + geom_point() + geom_text(aes(label=School))
+
+> ggplot(ACC, aes(x = SOS, y = Wins)) + geom_point() + geom_text(aes(label=School))
+
+> ggplot(IND, aes(x = SOS, y = Wins)) + geom_point() + geom_text(aes(label=School))
+
+
+
+Bar chart ggplot
+> g1 <- ggplot(ACC, aes(School))
+> g1 + geom_bar(aes(fill = SRS), position = position_stack(reverse = TRUE)) + coord_flip() + theme(legend.position = "top")
+
+> g2 <- ggplot(Big12, aes(School))
+> g2 + geom_bar(aes(fill = SRS), position = position_stack(reverse = TRUE)) + coord_flip() + theme(legend.position = "top")
+
+> g3<- ggplot(BigTen, aes(School))
+> g3+ geom_bar(aes(fill = SRS), position = position_stack(reverse = TRUE)) + coord_flip() + theme(legend.position = "top")
+
+> g4<- ggplot(Pac12, aes(School))
+> g4+geom_bar(aes(fill = SRS), position = position_stack(reverse = TRUE)) + coord_flip() + theme(legend.position = "top")
+
+> g5<- ggplot(SEC, aes(School))
+> g5+geom_bar(aes(fill = SRS), position = position_stack(reverse = TRUE)) + coord_flip() + theme(legend.position = "top")
+
+> g6<- ggplot(IND, aes(School))
+> g6+geom_bar(aes(fill = SRS), position = position_stack(reverse = TRUE)) + coord_flip() + theme(legend.position = "top")
+
+> g7<- ggplot(FBS, aes(School))
+> g7+geom_bar(aes(fill = SRS), position = position_stack(reverse = TRUE)) + coord_flip() + theme(legend.position = "top")
+
+Hist function
+
+> hist(FBS$WinPct)
+> TopWinPct<- FBS[order(-FBS$WinPct),]
+
+T test
+> ttest<-t.test(FBS$APRanks, FBS$Wins)
+> ts = replicate(1000,t.test(rnorm(10),rnorm(10))$statistic)
+> range(ts)
+> pts = seq(-3.5,3.5,length=100)
+> plot(pts,dt(pts,df=18),col='red',type='l')
+> lines(density(ts))
+
+> qqplot(ts,rt(1000,df=18))
+> abline(0,1)
+
+> quantile(ts,probs)
+     90%      95%      99% 
+1.273961 1.602993 2.173103 
+
+> qt(probs,df=18)
+[1] 1.330391 1.734064 2.552380
+
+gpglot 
+
+>ggplot(FBS, aes(Wins, Diff, colour = School)) + geom_point()
