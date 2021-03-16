@@ -21,13 +21,13 @@ The Applied Data Science program at Syracuse University’s School of Informatio
     - Written Portfolio Milestone Report
 
 4. Referenced Course Projects and Assignments
-    * [IST 659: Database Administration](https://github.com/SLPeoples/MSADS_Portfolio/tree/master/IST659_DatabaseAdministration)
+    * [IST 659: Database Administration](https://github.com/kyleumlang/MSDS-Portfolio-Milestone/tree/main/IST%20659%20Database%20Management)
     
-    * [IST 687: Applied Data Science](https://github.com/SLPeoples/MSADS_Portfolio/tree/master/IST707_DataAnalytics)
+    * [IST 687: Applied Data Science](https://github.com/kyleumlang/MSDS-Portfolio-Milestone/tree/main/IST%20687%20Applied%20Data%20Science)
     
-    * [IST 718: Big Data Analytics](https://github.com/SLPeoples/MSADS_Portfolio/tree/master/IST736_TextMining)
+    * [IST 718: Big Data Analytics](https://github.com/kyleumlang/MSDS-Portfolio-Milestone/tree/main/IST%20718%20Big%20Data%20Analytics)
    
-    * [IST 719: Information Visualization](https://github.com/SLPeoples/MSADS_Portfolio/tree/master/MAR653_Marketing_Analytics)
+    * [IST 719: Information Visualization](https://github.com/kyleumlang/MSDS-Portfolio-Milestone/tree/main/IST%20719%20Information%20Visualization)
   
 5. [Kyle_Umlang_Presentation](https://github.com/SLPeoples/MSADS_Portfolio/blob/master/SamuelPeoplesPortfolioPresentation.mp4)
     - Video file presenting the Portfolio Milestone
