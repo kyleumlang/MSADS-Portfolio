@@ -31,7 +31,7 @@ The Applied Data Science program at Syracuse University’s School of Informatio
   
 5. [Kyle_Umlang_Presentation](https://github.com/SLPeoples/MSADS_Portfolio/blob/master/SamuelPeoplesPortfolioPresentation.mp4)
     - Video file presenting the Portfolio Milestone
-    - [Public Link]()
+    - [Public Link](https://drive.google.com/file/d/1FnpgjQ6yG33TXMPQGA4eqQJS5AL16o87/view?usp=sharing)
 
 6. [Kyle_Umlang_SlideDeck.pdf](https://github.com/kyleumlang/MSADS-Portfolio/blob/main/Kyle_Umlang_SlideDeck.pdf)
     - Referenced slide deck from presentation
