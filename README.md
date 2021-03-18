@@ -14,10 +14,10 @@ The Applied Data Science program at Syracuse University’s School of Informatio
 1. README.md 
     - Overview Document detailing repository contents
 
-2. [Kyle_Umlang_Resume_2021.pdf](https://github.com/kyleumlang/MSADS_Portfolio/blob/main/Kyle_Umlang_Resume_2021.pdf)
+2. [Kyle_Umlang_Resume_2021.pdf](https://github.com/kyleumlang/MSADS-Portfolio/blob/main/Kyle_Umlang_Resume_2021.pdf)
     - Current Resume
 
-3. [Kyle_Umlang_Porfolio_Milestone.pdf](https://github.com/SLPeoples/MSADS_Portfolio/blob/master/SamuelPeoplesPorfolioMilestone.pdf)
+3. [Kyle_Umlang_Porfolio_Milestone.pdf](https://github.com/kyleumlang/MSADS-Portfolio/blob/main/Kyle_Umlang_Porfolio_Milestone.pdf)
     - Written Portfolio Milestone Report
 
 4. Referenced Course Projects and Assignments
