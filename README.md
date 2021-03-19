@@ -29,7 +29,7 @@ The Applied Data Science program at Syracuse University’s School of Informatio
    
     * [IST 719: Information Visualization](https://github.com/kyleumlang/MSADS-Portfolio/tree/main/IST%20719%20Information%20Visualization)
   
-5. [Kyle_Umlang_Presentation](https://github.com/SLPeoples/MSADS_Portfolio/blob/master/SamuelPeoplesPortfolioPresentation.mp4)
+5. [Kyle_Umlang_Presentation](https://github.com/kyleumlang/MSADS-Portfolio/blob/main/Kyle_Umlang_Presentation.mp4)
     - Video file presenting the Portfolio Milestone
     - [Public Link](https://drive.google.com/file/d/1FnpgjQ6yG33TXMPQGA4eqQJS5AL16o87/view?usp=sharing)
 
